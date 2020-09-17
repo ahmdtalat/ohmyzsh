@@ -70,8 +70,9 @@ prompt_end() {
   else
     echo -n "%{%k%}"
   fi
-  echo -n "%{%f%}"
+  echo -n "\e[m\n$FG[211]==>%{%f%}"
   CURRENT_BG=''
+   
 }
 
 ### Prompt components
@@ -217,7 +218,7 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_virtualenv
-  prompt_context
+  #prompt_context
   prompt_dir
   prompt_git
   prompt_bzr
